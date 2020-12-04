@@ -21,6 +21,6 @@
 #define CLIENT_SSID "Your_SSID"
 #define CLIENT_PASS "Your_Password"
 */
-// #define CLIENT_SSID "IPLAN-220284"
-// #define CLIENT_PASS "30291447"
+#define CLIENT_SSID "IPLAN-220284"
+#define CLIENT_PASS "30291447"
 //#define MAX_LEDS 1500       //Maximum total LEDs. More than 1500 might create a low memory situation on ESP8266.
