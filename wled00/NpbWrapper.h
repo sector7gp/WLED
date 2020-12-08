@@ -4,7 +4,7 @@
 
 //PIN CONFIGURATION
 #ifndef LEDPIN
-#define LEDPIN 3  //strip pin. Any for ESP32, gpio2 or 3 is recommended for ESP8266 (gpio2/3 are labeled D4/RX on NodeMCU and Wemos)
+#define LEDPIN 5  //strip pin. Any for ESP32, gpio2 or 3 is recommended for ESP8266 (gpio2/3 are labeled D4/RX on NodeMCU and Wemos)
 #endif
 //#define USE_APA102  // Uncomment for using APA102 LEDs.
 //#define USE_WS2801  // Uncomment for using WS2801 LEDs (make sure you have NeoPixelBus v2.5.6 or newer)
@@ -141,7 +141,7 @@
   #define PIXELMETHOD NeoTm1814Method  
  #elif defined(USE_P9813)
   #define PIXELMETHOD P9813Method  
- #elif LEDPIN == 2
+ #elif LEDPIN == 3
   #define PIXELMETHOD NeoEsp8266Uart1Ws2813Method //if you get an error here, try to change to NeoEsp8266UartWs2813Method or update Neopixelbus
  #elif LEDPIN == 3
   #define PIXELMETHOD NeoEsp8266Dma800KbpsMethod
