@@ -260,7 +260,7 @@ void WLED::initAP(bool resetAP)
     return;
 
   if (!apSSID[0] || resetAP)
-    strcpy(apSSID, "WLED-AP");
+    strcpy(apSSID, "DTEC");
   if (resetAP)
     strcpy(apPass, DEFAULT_AP_PASS);
   DEBUG_PRINT("Opening access point ");

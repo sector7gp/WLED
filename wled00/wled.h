@@ -8,7 +8,7 @@
  */
 
 // version code in format yymmddb (b = daily build)
-#define VERSION 2008310
+#define VERSION 2012080
 
 // ESP8266-01 (blue) got too little storage space to work with all features of WLED. To use it, you must use ESP8266 Arduino Core v2.4.2 and the setting 512K(No SPIFFS).
 
@@ -158,7 +158,7 @@
 
 // Global Variable definitions
 WLED_GLOBAL char versionString[] _INIT("0.10.2");
-#define WLED_CODENAME "Fumikiri"
+#define WLED_CODENAME "Fumikiri mod DTEC"
 
 // AP and OTA default passwords (for maximum security change them!)
 WLED_GLOBAL char apPass[65]  _INIT(DEFAULT_AP_PASS);
@@ -169,7 +169,7 @@ WLED_GLOBAL char otaPass[33] _INIT(DEFAULT_OTA_PASS);
 
 WLED_GLOBAL byte auxDefaultState _INIT(0);                         // 0: input 1: high 2: low
 WLED_GLOBAL byte auxTriggeredState _INIT(0);                       // 0: input 1: high 2: low
-WLED_GLOBAL char ntpServerName[33] _INIT("0.wled.pool.ntp.org");   // NTP server to use
+WLED_GLOBAL char ntpServerName[33] _INIT("3.ar.pool.ntp.org");   // NTP server to use
 
 // WiFi CONFIG (all these can be changed via web UI, no need to set them here)
 WLED_GLOBAL char clientSSID[33] _INIT(CLIENT_SSID);
@@ -190,7 +190,7 @@ WLED_GLOBAL bool useRGBW      _INIT(true);       // SK6812 strips can contain an
 WLED_GLOBAL bool turnOnAtBoot _INIT(true);        // turn on LEDs at power-up
 WLED_GLOBAL byte bootPreset   _INIT(0);           // save preset to load after power-up
 
-WLED_GLOBAL byte col[]    _INIT_N(({ 0, 0, 0, 127 }));  // current RGB(W) primary color. col[] should be updated if you want to change the color.
+WLED_GLOBAL byte col[]    _INIT_N(({ 255, 255, 255, 255 }));  // current RGB(W) primary color. col[] should be updated if you want to change the color.
 WLED_GLOBAL byte colSec[] _INIT_N(({ 0, 0, 0, 0 }));      // current RGB(W) secondary color
 WLED_GLOBAL byte briS     _INIT(128);                     // default brightness
 
@@ -204,7 +204,7 @@ WLED_GLOBAL bool skipFirstLed  _INIT(false);        // ignore first LED in strip
 WLED_GLOBAL byte briMultiplier _INIT(100);          // % of brightness to set (to limit power, if you set it to 50 and set bri to 255, actual brightness will be 127)
 
 // User Interface CONFIG
-WLED_GLOBAL char serverDescription[33] _INIT("HITO");  // Name of module
+WLED_GLOBAL char serverDescription[33] _INIT("Zunga");  // Name of module
 WLED_GLOBAL bool syncToggleReceive     _INIT(false);   // UIs which only have a single button for sync should toggle send+receive if this is true, only send otherwise
 
 // Sync CONFIG
@@ -267,10 +267,10 @@ WLED_GLOBAL bool hueApplyBri _INIT(true);
 WLED_GLOBAL bool hueApplyColor _INIT(true);
 
 // Time CONFIG
-WLED_GLOBAL bool ntpEnabled _INIT(false);         // get internet time. Only required if you use clock overlays or time-activated macros
+WLED_GLOBAL bool ntpEnabled _INIT(true);         // get internet time. Only required if you use clock overlays or time-activated macros
 WLED_GLOBAL bool useAMPM _INIT(false);            // 12h/24h clock format
 WLED_GLOBAL byte currentTimezone _INIT(0);        // Timezone ID. Refer to timezones array in wled10_ntp.ino
-WLED_GLOBAL int utcOffsetSecs _INIT(0);           // Seconds to offset from UTC before timzone calculation
+WLED_GLOBAL int utcOffsetSecs _INIT(-10800);           // Seconds to offset from UTC before timzone calculation
 
 WLED_GLOBAL byte overlayDefault _INIT(0);                               // 0: no overlay 1: analog clock 2: single-digit clocl 3: cronixie
 WLED_GLOBAL byte overlayMin _INIT(0), overlayMax _INIT(ledCount - 1);   // boundaries of overlay mode
@@ -378,7 +378,7 @@ WLED_GLOBAL byte effectPalette _INIT(0);
 WLED_GLOBAL bool udpConnected _INIT(false), udpRgbConnected _INIT(false);
 
 // ui style
-WLED_GLOBAL bool showWelcomePage _INIT(false);
+WLED_GLOBAL bool showWelcomePage _INIT(true);
 
 // hue
 WLED_GLOBAL byte hueError _INIT(HUE_ERROR_INACTIVE);
