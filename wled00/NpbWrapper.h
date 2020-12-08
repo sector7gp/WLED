@@ -30,7 +30,7 @@
 #endif
 
 #ifndef RLYPIN
-#define RLYPIN 1  //pin for relay, will be set HIGH if LEDs are on (-1 to disable). Also usable for standby leds, triggers,...
+#define RLYPIN -1  //pin for relay, will be set HIGH if LEDs are on (-1 to disable). Also usable for standby leds, triggers,...
 #endif
 
 #ifndef AUXPIN
@@ -111,7 +111,7 @@
     #endif
   #endif
   #undef RLYPIN
-  #define RLYPIN 1 //disable as pin 12 is used by analog LEDs
+  #define RLYPIN -1 //disable as pin 12 is used by analog LEDs
 #endif
 
 //automatically uses the right driver method for each platform
