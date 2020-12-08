@@ -4,7 +4,7 @@
 
 //PIN CONFIGURATION
 #ifndef LEDPIN
-#define LEDPIN 5  //strip pin. Any for ESP32, gpio2 or 3 is recommended for ESP8266 (gpio2/3 are labeled D4/RX on NodeMCU and Wemos)
+#define LEDPIN 2  //strip pin. Any for ESP32, gpio2 or 3 is recommended for ESP8266 (gpio2/3 are labeled D4/RX on NodeMCU and Wemos)
 #endif
 //#define USE_APA102  // Uncomment for using APA102 LEDs.
 //#define USE_WS2801  // Uncomment for using WS2801 LEDs (make sure you have NeoPixelBus v2.5.6 or newer)
@@ -25,8 +25,8 @@
 //#define TOUCHPIN T0 //touch pin. Behaves the same as button. ESP32 only.
 #endif
 
-#ifndef IRPIN
-#define IRPIN  -1  //infrared pin (-1 to disable)  MagicHome: 4, H801 Wifi: 0
+#ifndef IR_PIN
+#define IR_PIN  -1  //infrared pin (-1 to disable)  MagicHome: 4, H801 Wifi: 0
 #endif
 
 #ifndef RLYPIN
@@ -104,10 +104,10 @@
       #define GPIN 12  //G pin for analog LED strip
     #endif
     #ifndef BPIN
-      #define BPIN 15  //B pin for analog LED strip
+      #define BPIN 13  //B pin for analog LED strip
     #endif
     #ifndef WPIN
-      #define WPIN 2  //W pin for analog LED strip
+      #define WPIN 3  //W pin for analog LED strip
     #endif
   #endif
   #undef RLYPIN
@@ -141,7 +141,7 @@
   #define PIXELMETHOD NeoTm1814Method  
  #elif defined(USE_P9813)
   #define PIXELMETHOD P9813Method  
- #elif LEDPIN == 3
+ #elif LEDPIN == 2
   #define PIXELMETHOD NeoEsp8266Uart1Ws2813Method //if you get an error here, try to change to NeoEsp8266UartWs2813Method or update Neopixelbus
  #elif LEDPIN == 3
   #define PIXELMETHOD NeoEsp8266Dma800KbpsMethod
